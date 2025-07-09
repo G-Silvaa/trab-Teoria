@@ -1,29 +1,39 @@
-# trab-Teoria
+# Verificador de Duplicados
+
+Sistema para detectar registros duplicados e dados faltando em planilhas Excel.
+
+## Uso
+
+```bash
+
+./setup.sh
 
 
-# Checagem de Duplicados em Planilhas - TCOMP 2025.1
+./start.sh
+```
 
-## Objetivo
-Detectar registros duplicados e campos faltando em planilhas de alunos.
+## Arquivo Principal
+
+`verificador.py` - Contém toda a lógica do sistema
+
+### Opções:
+- `python verificador.py` - Executa verificação
+- `python verificador.py --criar-exemplo` - Cria dados de exemplo
+
+## Estrutura
+
+```
+├── verificador.py    # Código principal
+├── data/            # Arquivos de entrada
+├── output/          # Resultados
+├── setup.sh         # Configuração
+├── start.sh         # Execução
+└── requirements.txt # Dependências
+```
 
 ## Funcionalidades
-- Detecta linhas duplicadas com base em **Nome** e **Matrícula**.
-- Identifica linhas com **valores faltando** (células vazias).
-- Exporta dois arquivos de resultado:
-  - `duplicados_encontrados.xlsx`
-  - `dados_faltando.xlsx`
 
-## Requisitos
-- Python 3.x
-- Bibliotecas: `pandas`, `openpyxl`
-
-## Como usar
-1. Instale as dependências:
-   ```bash
-   pip install pandas openpyxl
-   ```
-
-2. Execute o script:
-   ```bash
-   python verifica_duplicados.py
-   ```
+- Detecção de duplicados por Nome e Matrícula
+- Identificação de campos vazios
+- Relatórios em Excel com timestamp
+- Criação automática de dados de exemplo
